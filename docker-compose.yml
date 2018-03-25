@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  db:
+    image: postgres:9.4
+  web:
+    build: ./
+    command: sh ./docker-entrypoint.sh db 5432
+    ports:
+    - 8000:8000
+    depends_on:
+    - db
+    environment:
+      DATABASE_URL: postgres://postgres@db/postgres

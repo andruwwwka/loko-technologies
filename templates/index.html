@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Локомотивные технологии | Выручка</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static "bower_components/font-awesome/css/font-awesome.min.css" %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static "bower_components/Ionicons/css/ionicons.min.css" %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static "dist/css/AdminLTE.min.css" %}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{% static "dist/css/skins/_all-skins.min.css" %}">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <link rel="stylesheet" href="{% static "css/app.css" %}">
+  <!-- Google Font -->
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- search form -->
+      <form action="" id="search_form" method="get" class="sidebar-form">
+        <div class="form-group">
+          <label>Год от</label>
+          <select id="year_from" class="form-control"></select>
+        </div>
+        <div class="form-group">
+          <label>Год до</label>
+          <select id="year_to" class="form-control"></select>
+        </div>
+        <div class="form-group">
+          <label>Филиал</label>
+          <select multiple id="branches" class="form-control"></select>
+        </div>
+        <div class="form-group">
+          <label>Серия</label>
+          <select multiple id="series" class="form-control"></select>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Показать</button>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Выручка по годам
+      </h1>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <i class="fa fa-bar-chart-o"></i>
+
+              <h3 class="box-title">График выручки</h3>
+              <small>(млн. руб.)</small>
+            </div>
+            <div class="box-body">
+              <div id="bar-chart" style="height: 300px;"></div>
+            </div>
+            <!-- /.box-body-->
+          </div>
+
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+
+  </div>
+  <!-- /.content-wrapper -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static "bower_components/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+<!-- FLOT CHARTS -->
+<script src="{% static "bower_components/Flot/jquery.flot.js" %}"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="{% static "bower_components/Flot/jquery.flot.resize.js" %}"></script>
+<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+<script src="{% static "bower_components/Flot/jquery.flot.categories.js" %}"></script>
+<!-- Page script -->
+<script src="{% static "js/page_controllers.js" %}"></script>
+</body>
+</html>
